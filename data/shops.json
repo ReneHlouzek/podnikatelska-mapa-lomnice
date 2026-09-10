@@ -1,0 +1,17 @@
+[
+  {"name":"Penny Market","category":"Potraviny","address":"Pivovarská 1537, Lomnice nad Popelkou","lat":50.5329018,"lon":15.3707314,"source":"Veřejné firemní a mapové databáze"},
+  {"name":"Můjobchod - Potraviny Tran","category":"Potraviny","address":"Palackého 658, Lomnice nad Popelkou","lat":50.5293464,"lon":15.3761939,"source":"Můjobchod / veřejné databáze"},
+  {"name":"Potraviny U Pepy","category":"Potraviny","address":"Obránců míru 1186, Lomnice nad Popelkou","lat":50.53438,"lon":15.36647,"source":"Veřejné mapové a firemní databáze"},
+  {"name":"Jednota / COOP","category":"Potraviny","address":"Palackého 648, Lomnice nad Popelkou","lat":50.5279106,"lon":15.3770047,"source":"Veřejné adresní a firemní databáze"},
+  {"name":"Samoška ISTRIA","category":"Potraviny","address":"Antala Staška 32, Lomnice nad Popelkou","lat":50.53055,"lon":15.37314,"source":"CBA / veřejné mapové databáze"},
+  {"name":"Teta drogerie","category":"Drogerie a kosmetika","address":"Antala Staška 184, Lomnice nad Popelkou","lat":50.5302236,"lon":15.3729042,"source":"TETA drogerie / RÚIAN"},
+  {"name":"TUREK elektro","category":"Elektro","address":"Husovo náměstí 35, Lomnice nad Popelkou","lat":50.5306201,"lon":15.3727795,"source":"Veřejné firemní a mapové databáze"},
+  {"name":"Vacek Elektro","category":"Elektro","address":"Husovo náměstí 9, Lomnice nad Popelkou","lat":50.5314,"lon":15.37314,"source":"Veřejná databáze prodejců"},
+  {"name":"Květinářství LILIE","category":"Květiny a dárky","address":"Husovo náměstí 12, Lomnice nad Popelkou","lat":50.5311228,"lon":15.3735114,"source":"Info-Čechy / Firmy.cz"},
+  {"name":"Chovatelské potřeby Lucca","category":"Chovatelské potřeby","address":"Husovo náměstí 16, Lomnice nad Popelkou","lat":50.5308571,"lon":15.3739729,"source":"Info-Čechy / veřejné databáze"},
+  {"name":"ČAO obuv","category":"Obuv a textil","address":"Husovo náměstí 11, Lomnice nad Popelkou","lat":50.5312245,"lon":15.3734247,"source":"Firmy.cz / RÚIAN"},
+  {"name":"Vaše obuv","category":"Obuv a textil","address":"Doubravského 18, Lomnice nad Popelkou","lat":50.5304259,"lon":15.3746436,"source":"Vaše obuv / veřejná adresní databáze"},
+  {"name":"VESNA - bytový textil a galanterie","category":"Bytový textil","address":"Palackého 172, Lomnice nad Popelkou","lat":50.5297117,"lon":15.3755511,"source":"VESNA / RÚIAN"},
+  {"name":"BOCH INTERIOOO","category":"Nábytek a interiér","address":"5. května 1329, Lomnice nad Popelkou","lat":50.5347069,"lon":15.3700322,"source":"Interiooo / RÚIAN"},
+  {"name":"ZEMAN maso-uzeniny","category":"Maso a uzeniny","address":"Pivovarská 1537, Lomnice nad Popelkou","lat":50.5329042,"lon":15.3707314,"source":"ZEMAN / RÚIAN"}
+]
