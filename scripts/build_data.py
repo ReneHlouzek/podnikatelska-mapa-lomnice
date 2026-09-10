@@ -29,11 +29,16 @@ def ruian_links():
     req=urllib.request.Request(RUIAN_INDEX_URL,headers={'User-Agent':'podnikatelska-mapa-lomnice/1.0'})
     html=urllib.request.urlopen(req).read().decode('utf-8','replace')
     links={}
-    for code in MUNICIPALITIES:
-        m=re.search(r'href=["\']([^"\']*?_OB_'+re.escape(code)+r'_ADR\.csv\.zip)["\']',html,re.I)
-        if m:
-            href=m.group(1)
-            links[code]=href if href.startswith('http') else 'https://services.cuzk.cz'+('/' if not href.startswith('/') else '')+href
+    # The index contains links in several filename variants. Match any ZIP
+    # whose name contains the municipality code and ADR/OB markers.
+    for m in re.finditer(r'href=["\']([^"\']+\.zip)["\']', html, re.I):
+        href=m.group(1)
+        for code in MUNICIPALITIES:
+            if code in href and ('ADR' in href.upper() or 'OB' in href.upper()):
+                if href.startswith('http'):
+                    links[code]=href
+                else:
+                    links[code]='https://services.cuzk.cz'+('/' if not href.startswith('/') else '')+href
     print(f'RUIAN: found {len(links)}/{len(MUNICIPALITIES)} municipality address files')
     return links
 
@@ -46,7 +51,10 @@ def load_ruian(kods):
             for name in z.namelist():
                 if not name.lower().endswith('.csv'): continue
                 with z.open(name) as f:
-                    reader=csv.DictReader(io.TextIOWrapper(f,encoding='utf-8-sig',newline=''))
+                    raw=f.read()
+                    # RÚIAN municipal CSV files are commonly Windows-1250.
+                    text=raw.decode('cp1250-sig',errors='strict')
+                    reader=csv.DictReader(io.StringIO(text))
                     for row in reader:
                         k=row.get('KOD_ADM') or row.get('KODADM') or row.get('KOD_ADRESNIHO_MISTA')
                         if k not in kods: continue
