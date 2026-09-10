@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Podnikatelská mapa Lomnice nad Popelkou</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div><strong>Podnikatelská mapa</strong><span>Lomnice nad Popelkou · okruh 5 km</span></div><div id="count">Načítám…</div></header>
+<main>
+<aside>
+<h2>Firmy a podnikatelé</h2>
+<input id="search" type="search" placeholder="Hledat firmu, IČO…">
+<label>Obor</label><select id="sector"><option value="">Všechny obory</option></select>
+<label>Velikost subjektu</label><select id="size"><option value="">Všechny velikosti</option></select>
+<label>Právní forma</label><select id="legal"><option value="">Všechny formy</option></select>
+<label>Vzdálenost</label><select id="distance"><option value="">Celý okruh 5 km</option><option value="0-1">0–1 km</option><option value="1-2">1–2 km</option><option value="2-3">2–3 km</option><option value="3-5">3–5 km</option></select>
+<div class="stats"><b id="visible">0</b><span>zobrazených subjektů</span></div>
+<p class="note">Počet pracovníků z RES je kategorií za celý ekonomický subjekt. Neznamená automaticky počet lidí, kteří fyzicky pracují v Lomnici.</p>
+</aside>
+<section id="map"></section>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
