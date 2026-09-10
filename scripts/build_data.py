@@ -29,16 +29,17 @@ def ruian_links():
     req=urllib.request.Request(RUIAN_INDEX_URL,headers={'User-Agent':'podnikatelska-mapa-lomnice/1.0'})
     html=urllib.request.urlopen(req).read().decode('utf-8','replace')
     links={}
-    # The index contains links in several filename variants. Match any ZIP
-    # whose name contains the municipality code and ADR/OB markers.
+    # Match ZIP links containing a municipality code. The directory may use
+    # different filename variants, so ADR/OB is intentionally not required.
     for m in re.finditer(r'href=["\']([^"\']+\.zip)["\']', html, re.I):
         href=m.group(1)
         for code in MUNICIPALITIES:
-            if code in href and ('ADR' in href.upper() or 'OB' in href.upper()):
+            if code in href:
                 if href.startswith('http'):
                     links[code]=href
                 else:
-                    links[code]='https://services.cuzk.cz'+('/' if not href.startswith('/') else '')+href
+                    from urllib.parse import urljoin
+                    links[code]=urljoin(RUIAN_INDEX_URL, href)
     print(f'RUIAN: found {len(links)}/{len(MUNICIPALITIES)} municipality address files')
     return links
 
@@ -52,16 +53,21 @@ def load_ruian(kods):
                 if not name.lower().endswith('.csv'): continue
                 with z.open(name) as f:
                     raw=f.read()
-                    # RÚIAN municipal CSV files are commonly Windows-1250.
-                    text=raw.decode('cp1250-sig',errors='strict')
-                    reader=csv.DictReader(io.StringIO(text))
+                    # RÚIAN municipal CSV is Windows-1250; remove BOM if present.
+                    text=raw.decode('cp1250',errors='strict').lstrip('\ufeff')
+                    sample=text[:4096]
+                    try:
+                        dialect=csv.Sniffer().sniff(sample,delimiters=',;|\t')
+                    except csv.Error:
+                        dialect=csv.excel
+                    reader=csv.DictReader(io.StringIO(text),dialect=dialect)
                     for row in reader:
-                        k=row.get('KOD_ADM') or row.get('KODADM') or row.get('KOD_ADRESNIHO_MISTA')
+                        k=(row.get('KOD_ADM') or row.get('KODADM') or row.get('KOD_ADRESNIHO_MISTA') or '').strip()
                         if k not in kods: continue
-                        y,x=row.get('SOURADNICE_Y'),row.get('SOURADNICE_X')
+                        y=(row.get('SOURADNICE_Y') or '').strip(); x=(row.get('SOURADNICE_X') or '').strip()
                         if not y or not x: continue
                         try:
-                            lon,lat=tr.transform(float(x),float(y)); result[k]=(lat,lon,row)
+                            lon,lat=tr.transform(float(x.replace(',','.')),float(y.replace(',','.'))); result[k]=(lat,lon,row)
                         except (ValueError,TypeError): pass
     print(f'RUIAN: matched {len(result)} RES addresses')
     return result
@@ -74,9 +80,9 @@ def clean(row,geo):
     return {'name':row.get('FIRMA',''),'ico':row.get('ICO',''),'lat':lat,'lon':lon,'distance_m':round(d),'sector':nace,'nace':nace,'size':row.get('KATPO',''),'legal':row.get('FORMA',''),'address':address,'kodadm':row.get('KODADM',''),'workers_local':None,'workers_note':'Kategorie pracovníků je údaj za ekonomický subjekt; místní zaměstnanost zatím není ověřena.','source':'ČSÚ RES + ČÚZK RÚIAN'}
 
 if __name__=='__main__':
-    rows=load_res(); kods={r.get('KODADM') for r in rows if r.get('KODADM')}; print(f'RES: {len(kods)} unique KODADM values'); geo=load_ruian(kods); out=[]
+    rows=load_res(); kods={str(r.get('KODADM')).strip() for r in rows if r.get('KODADM')}; print(f'RES: {len(kods)} unique KODADM values'); geo=load_ruian(kods); out=[]
     for r in rows:
-        if r.get('KODADM') in geo:
+        if str(r.get('KODADM')).strip() in geo:
             item=clean(r,geo)
             if item: out.append(item)
     out.sort(key=lambda x:(x['distance_m'],x['name'].lower())); OUT.parent.mkdir(exist_ok=True); OUT.write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8'); print(f'Created {len(out)} businesses')
