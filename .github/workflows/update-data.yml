@@ -1,6 +1,10 @@
 name: Aktualizace podnikatelské mapy
 
 on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'data/firms.json'
   workflow_dispatch:
   schedule:
     - cron: '20 6 2,17 * *'
