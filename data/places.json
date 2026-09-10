@@ -9,8 +9,19 @@
   {"name":"Cukrárna a kavárna U Marcely","category":"Kavárny a cukrárny","address":"Husovo náměstí 46","lat":50.5311,"lon":15.3720,"source":"Firmy.cz / veřejné mapové údaje"},
   {"name":"Zámecká kavárna","category":"Kavárny a cukrárny","address":"Lomnice nad Popelkou 4","lat":50.5304,"lon":15.3696,"source":"KIS Lomnice"},
   {"name":"Kosmetika Mgr. Kristýna Svatoňová","category":"Péče o tělo a zdraví","address":"Josefa Jana Fučíka 468","lat":50.5315,"lon":15.3790,"source":"Firmy.cz"},
-  {"name":"Fyzioterapie Lomnice n. Pop.","category":"Péče o tělo a zdraví","address":"Josefa Jana Fučíka 62","lat":50.5307,"lon":15.3780,"source":"Firmy.cz"},
+  {"name":"Fyzioterapie Lomnice n. Pop.","category":"Péče o tělo a zdraví","address":"Josefa Jana Fučíka 62","lat":50.5318,"lon":15.37046,"source":"Firmy.cz / veřejné databáze"},
   {"name":"Clean-up! služby","category":"Úklid a domácí služby","address":"Kavánova 1110","lat":50.5318,"lon":15.3810,"source":"Veřejné firemní databáze"},
-  {"name":"Technické služby města Lomnice nad Popelkou","category":"Technické a komunální služby","address":"K Urnovému háji 118","lat":50.5267,"lon":15.3825,"source":"Veřejné mapové údaje"},
-  {"name":"Cvičák Lomnice nad Popelkou","category":"Služby pro domácí mazlíčky","address":"Lomnice nad Popelkou","lat":50.5265,"lon":15.3695,"source":"Mapové databáze"}
+  {"name":"Technické služby města Lomnice nad Popelkou","category":"Technické a komunální služby","address":"K Urnovému háji 118","lat":50.5338481,"lon":15.3776722,"source":"Policie ČR / veřejné adresní zdroje"},
+  {"name":"Cvičák Lomnice nad Popelkou","category":"Služby pro domácí mazlíčky","address":"Lomnice nad Popelkou","lat":50.5265,"lon":15.3695,"source":"Mapové databáze"},
+  {"name":"Cyklo Ski Žitník","category":"Sport a volný čas","address":"5. května 728","lat":50.5346997,"lon":15.3705617,"source":"Oficiální firemní údaje / mapové zdroje"},
+  {"name":"SAMOHÝLOVÁ veterinární klinika","category":"Péče o domácí mazlíčky","address":"5. května 846","lat":50.5376172,"lon":15.3673,"source":"Veřejné adresní a mapové zdroje"},
+  {"name":"Lékárna U Lásků","category":"Zdravotnictví a lékárny","address":"Josefa Jana Fučíka 58","lat":50.5312771,"lon":15.3714637,"source":"Veřejné adresní a firemní zdroje"},
+  {"name":"Lékárna TRIO","category":"Zdravotnictví a lékárny","address":"Obránců míru 866","lat":50.53393,"lon":15.36765,"source":"Veřejné zdravotnické databáze"},
+  {"name":"Rehabilitace AHA","category":"Zdravotnictví a lékárny","address":"Antala Staška 182","lat":50.52995,"lon":15.37304,"source":"Veřejné zdravotnické databáze"},
+  {"name":"Fyziozlom s.r.o.","category":"Zdravotnictví a lékárny","address":"Josefa Jana Fučíka 62","lat":50.5318108,"lon":15.3704528,"source":"Veřejné zdravotnické databáze"},
+  {"name":"Sportovní hala ZŠ T. G. Masaryka","category":"Sport a volný čas","address":"Za Školou","lat":50.5293189,"lon":15.3732794,"source":"Veřejné sportovní a mapové zdroje"},
+  {"name":"Hokejový stadion Lomnice nad Popelkou","category":"Sport a volný čas","address":"Lomnice nad Popelkou 1535","lat":50.5339116,"lon":15.3697608,"source":"Veřejné sportovní a mapové zdroje"},
+  {"name":"Koupaliště Lomnice nad Popelkou","category":"Sport a volný čas","address":"Lomnice nad Popelkou 1055","lat":50.5230906,"lon":15.3636297,"source":"Veřejné mapové a turistické zdroje"},
+  {"name":"Letiště Lomnice nad Popelkou","category":"Doprava a letectví","address":"sportovní letiště Lomnice nad Popelkou","lat":50.5400000,"lon":15.3880556,"source":"Oficiální údaje letiště"},
+  {"name":"Řemeslný pivovar Lomnice nad Popelkou","category":"Řemesla a výroba","address":"Poděbradova 49","lat":50.5309806,"lon":15.3711033,"source":"Veřejné adresní a firemní zdroje"}
 ]
