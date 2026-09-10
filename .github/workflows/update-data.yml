@@ -24,6 +24,14 @@ jobs:
           python-version: '3.12'
       - name: Dependencies
         run: pip install pyproj
+      - name: Download RES
+        run: |
+          curl -L --fail --retry 6 --retry-delay 10 --retry-all-errors --connect-timeout 30 --max-time 1200 \
+            -A 'podnikatelska-mapa-lomnice/1.0' \
+            'https://opendata.csu.gov.cz/soubory/od/od_org03/res_data.csv' \
+            -o res_data.csv
+          test -s res_data.csv
+          ls -lh res_data.csv
       - name: Build data
         run: python scripts/build_data.py
       - name: Commit generated data
