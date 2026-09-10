@@ -26,11 +26,14 @@ jobs:
         run: pip install pyproj
       - name: Download RES
         run: |
-          curl -L --fail --retry 6 --retry-delay 10 --retry-all-errors --connect-timeout 30 --max-time 1200 \
+          rm -f res_data.csv
+          curl -L --fail --retry 8 --retry-delay 15 --retry-all-errors --connect-timeout 30 --max-time 1800 \
+            -H 'Accept-Encoding: gzip' \
             -A 'podnikatelska-mapa-lomnice/1.0' \
             'https://opendata.csu.gov.cz/soubory/od/od_org03/res_data.csv' \
-            -o res_data.csv
+            --compressed -o res_data.csv
           test -s res_data.csv
+          test "$(stat -c%s res_data.csv)" -gt 10000000
           ls -lh res_data.csv
       - name: Build data
         run: python scripts/build_data.py
