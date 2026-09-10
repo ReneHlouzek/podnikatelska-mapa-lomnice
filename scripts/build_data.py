@@ -84,8 +84,9 @@ def clean(row,geo):
 if __name__=='__main__':
     rows=load_res(); kods={str(r.get('KODADM')).strip() for r in rows if r.get('KODADM')}; print(f'RES: {len(kods)} unique KODADM values'); geo=load_ruian(kods); out=[]
     for r in rows:
-        if str(r.get('KODADM')).strip() in geo:
-            item=clean(r,geo)
+        kodadm=str(r.get('KODADM')).strip()
+        if kodadm in geo:
+            item=clean(r,geo[kodadm])
             if item: out.append(item)
     out.sort(key=lambda x:(x['distance_m'],x['name'].lower())); OUT.parent.mkdir(exist_ok=True); OUT.write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf-8'); print(f'Created {len(out)} businesses')
     if not out: raise RuntimeError('No businesses generated; refusing to publish empty dataset')
