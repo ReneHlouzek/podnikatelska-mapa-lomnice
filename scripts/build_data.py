@@ -70,7 +70,9 @@ def load_ruian(kods):
                         y=(row.get('SOURADNICE_Y') or '').strip(); x=(row.get('SOURADNICE_X') or '').strip()
                         if not y or not x: continue
                         try:
-                            lon,lat=tr.transform(float(x.replace(',','.')),float(y.replace(',','.'))); result[k]=(lat,lon,row)
+                            # RUIAN uses Czech S-JTSK columns X (northing) and Y (easting).
+                            # pyproj with always_xy=True expects EPSG:5514 input as (easting, northing), i.e. (Y, X).
+                            lon,lat=tr.transform(float(y.replace(',','.')),float(x.replace(',','.'))); result[k]=(lat,lon,row)
                         except (ValueError,TypeError): pass
     print(f'RUIAN: matched {len(result)} RES addresses'); return result
 
