@@ -2,28 +2,23 @@
 <html lang="cs">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Podnikatelská mapa Lomnice nad Popelkou</title>
+<title>Mapa podnikání a služeb Lomnice nad Popelkou</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header><div><strong>Podnikatelská mapa</strong><span>Lomnice nad Popelkou · firmy, podnikatelé a místní obchody</span></div><div id="count">Načítám…</div></header>
+<header><div><strong>Mapa podnikání a služeb</strong><span>Lomnice nad Popelkou · firmy, obchody, gastronomie a služby</span></div><div id="count">Načítám…</div></header>
 <main><aside>
-<h2>Firmy a obchody</h2>
-<label>Zobrazení</label><select id="mode"><option value="all" selected>Firmy + obchody</option><option value="firms">Jen firmy a podnikatelé</option><option value="shops">Jen obchody a prodejny</option></select>
-<input id="search" type="search" placeholder="Hledat firmu, obchod, IČO…">
+<h2>Co hledáte?</h2>
+<div class="mode"><button id="modeAll" class="active">Vše</button><button id="modeFirms">Firmy</button><button id="modePlaces">Obchody a služby</button></div>
+<input id="search" type="search" placeholder="Hledat název, IČO, adresu…">
 <label>Poloměr mapy</label><select id="radius"><option value="1">1 km</option><option value="2">2 km</option><option value="3">3 km</option><option value="5" selected>5 km</option></select>
-<div id="firmFilters">
+<label>Kategorie</label><select id="category"><option value="">Všechny kategorie</option></select>
 <label>Obor firmy</label><select id="sector"><option value="">Všechny obory</option></select>
 <label>Velikost subjektu</label><select id="size"><option value="">Všechny velikosti</option></select>
-<label>Právní forma</label><select id="legal"><option value="">Všechny formy</option></select>
-</div>
-<div id="shopFilters">
-<label>Kategorie obchodu</label><select id="shopCategory"><option value="">Všechny kategorie</option></select>
-</div>
 <label>Vzdálenost</label><select id="distance"><option value="">Celý zvolený okruh</option><option value="0-1">0–1 km</option><option value="1-2">1–2 km</option><option value="2-3">2–3 km</option><option value="3-5">3–5 km</option></select>
-<div class="legend"><b>Firmy a podnikatelé</b><span>● velikost bodu = kategorie zaměstnanosti</span><b>Obchody a prodejny</b><span class="shop-legend">■</span><span>Obchody jsou označeny čtvercovým bodem.</span></div>
-<div class="stats"><b id="visible">0</b><span id="visibleLabel">zobrazených subjektů</span></div>
-<p class="note">Firemní data pocházejí z RES. Kategorie pracovníků je údaj za celý ekonomický subjekt a neznamená automaticky počet lidí, kteří fyzicky pracují v Lomnici. Seznam obchodů je samostatná ověřovaná vrstva z veřejných zdrojů.</p>
+<div class="legend"><b>Legenda</b><span>● firmy a podnikatelé</span><span class="placeLegend">■ obchody, restaurace a služby</span><span>Velikost bodu = velikost subjektu u firem.</span></div>
+<div class="stats"><b id="visible">0</b><span>zobrazených míst</span></div>
+<p class="note">Firemní data vycházejí z ČSÚ RES. Kategorie pracovníků je údaj za celý ekonomický subjekt a neznamená automaticky počet lidí pracujících v Lomnici. Místní provozovny a služby jsou vedené samostatně podle veřejně dostupných zdrojů.</p>
 </aside><section id="map"></section></main>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="app.js"></script>
 </body></html>
