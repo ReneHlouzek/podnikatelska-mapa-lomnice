@@ -1,0 +1,16 @@
+[
+  {"name":"TÂM Quán","category":"Restaurace a občerstvení","address":"Palackého 160","lat":50.5295628,"lon":15.3756417,"source":"Firmy.cz / Mapy.com"},
+  {"name":"Hostinec Na Karlově","category":"Restaurace a občerstvení","address":"Josefa Kábrta 235","lat":50.5287857,"lon":15.3695173,"source":"Info-Čechy / Firmy.cz"},
+  {"name":"Restaurace Můstky","category":"Restaurace a občerstvení","address":"V Popelkách 1247","lat":50.533721,"lon":15.370106,"source":"Firmy.cz / veřejné mapové údaje"},
+  {"name":"PIZZERIA AL CAPONE","category":"Restaurace a občerstvení","address":"plk. Truhláře 114","lat":50.5326439,"lon":15.3730428,"source":"Podnikatel.cz / Firmy.cz"},
+  {"name":"Restaurace Babylon","category":"Restaurace a občerstvení","address":"Poděbradova 670","lat":50.5318,"lon":15.3782,"source":"Firmy.cz / veřejné mapové údaje"},
+  {"name":"Hospoda Lomnice nad Popelkou","category":"Restaurace a občerstvení","address":"gen. Ludvíka Svobody 1049","lat":50.5297,"lon":15.3788,"source":"Firmy.cz / veřejné mapové údaje"},
+  {"name":"KinoKavárna","category":"Kavárny a cukrárny","address":"5. května 724","lat":50.5300,"lon":15.3720,"source":"KIS Lomnice / Firmy.cz"},
+  {"name":"Cukrárna a kavárna U Marcely","category":"Kavárny a cukrárny","address":"Husovo náměstí 46","lat":50.5311,"lon":15.3720,"source":"Firmy.cz / veřejné mapové údaje"},
+  {"name":"Zámecká kavárna","category":"Kavárny a cukrárny","address":"Lomnice nad Popelkou 4","lat":50.5304,"lon":15.3696,"source":"KIS Lomnice"},
+  {"name":"Kosmetika Mgr. Kristýna Svatoňová","category":"Péče o tělo a zdraví","address":"Josefa Jana Fučíka 468","lat":50.5315,"lon":15.3790,"source":"Firmy.cz"},
+  {"name":"Fyzioterapie Lomnice n. Pop.","category":"Péče o tělo a zdraví","address":"Josefa Jana Fučíka 62","lat":50.5307,"lon":15.3780,"source":"Firmy.cz"},
+  {"name":"Clean-up! služby","category":"Úklid a domácí služby","address":"Kavánova 1110","lat":50.5318,"lon":15.3810,"source":"Veřejné firemní databáze"},
+  {"name":"Technické služby města Lomnice nad Popelkou","category":"Technické a komunální služby","address":"K Urnovému háji 118","lat":50.5267,"lon":15.3825,"source":"Veřejné mapové údaje"},
+  {"name":"Cvičák Lomnice nad Popelkou","category":"Služby pro domácí mazlíčky","address":"Lomnice nad Popelkou","lat":50.5265,"lon":15.3695,"source":"Mapové databáze"}
+]
